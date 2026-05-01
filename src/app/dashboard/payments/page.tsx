@@ -123,7 +123,7 @@ export default function PaymentsPage() {
                 <div className="grid grid-cols-1 gap-4">
                     {payments.map((p: any) => (
                         <div key={p.id} className="card table-card">
-                            <div className="grid grid-cols-4 items-center">
+                            <div className="grid grid-cols-2 md:grid-cols-4 items-center">
                                 <div>
                                     <p className="text-xs text-gray-400">Project</p>
                                     <h2 className="mb-0 text-md text-white">{p.project?.title}</h2>
@@ -137,7 +137,7 @@ export default function PaymentsPage() {
                                     <p className="text-md text-white">{moment(p.createdAt).format("DD MMM, YY")}</p>
                                 </div>
                                 {(session?.user as any)?.role !== "client" && (
-                                    <div className="flex gap-2 justify-end">
+                                    <div className="flex gap-2 md:justify-end">
                                         <button
                                             className="icon-btn icon-edit"
                                             onClick={() => openEditModal(p)}
