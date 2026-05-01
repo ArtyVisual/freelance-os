@@ -12,13 +12,13 @@ export default function Header({ user }: HeaderProps) {
   const { data: session } = useSession();
 
   return (
-    <div className="flex items-center justify-between px-6 py-3 border-b border-gray-800 bg-gray-900">
+    <div className="flex items-center justify-between px-3 lg:px-6 py-3 border-b border-gray-800 bg-gray-900">
 
       <div>
-        <h1 className="pl-10 lg:pl-0 pt-1 text-lg font-semibold text-blue-300 m-0 hidden sm:block">
+        <h1 className="pl-12 lg:pl-0 pt-1 text-lg font-semibold text-blue-300 m-0 hidden sm:block">
           AI-Powered Freelance Revenue & Risk Management System
         </h1>
-        <h1 className="pl-10 lg:pl-0 pt-1 text-md font-semibold text-blue-300 m-0 sm:hidden">
+        <h1 className="pl-14 pt-1 text-md font-semibold text-blue-300 m-0 sm:hidden">
           AI-Powered Freelance
         </h1>
       </div>
@@ -30,7 +30,7 @@ export default function Header({ user }: HeaderProps) {
         </div>
         <button
           onClick={() => signOut()}
-          className="px-4 py-2 bg-red-600 rounded-lg hover:bg-red-700"
+          className="px-2 md:px-4 py-2 bg-red-600 rounded-lg hover:bg-red-700"
         >
           Logout
         </button>
