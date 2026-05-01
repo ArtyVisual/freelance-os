@@ -21,7 +21,7 @@ export default function DashboardPage() {
 
   const { data: session } = useSession();
 
-  if (session?.user?.role === "client") {
+  if ((session?.user as any)?.role === "client") {
     return <ClientDashboard />;
   }
 
