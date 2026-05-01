@@ -1,0 +1,74 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String   @id @default(cuid())
+  email    String   @unique
+  name     String?
+  password String
+  role     String   @default("user")
+  createdAt DateTime @default(now())
+
+  // admin → many clients
+  clientsCreated Client[] @relation("AdminClients")
+
+  // client → exactly one client profile
+  clientProfile  Client?  @relation("ClientUser")
+
+  projects Project[]
+}
+
+model Client {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  company   String?
+  createdAt DateTime @default(now())
+
+  // admin who created
+  createdBy String
+  admin     User     @relation("AdminClients", fields: [createdBy], references: [id])
+
+  // client login (1:1)
+  userId    String?  @unique   // 👈 ADD THIS
+  user      User?    @relation("ClientUser", fields: [userId], references: [id])
+
+  projects  Project[]
+}
+
+model Project {
+  id        String   @id @default(cuid())
+  title     String
+
+  budget    Float?
+  paid      Float    @default(0)
+
+  deadline  DateTime?
+
+  status    String   @default("pending")
+
+  clientId  String
+  client    Client   @relation(fields: [clientId], references: [id])
+
+  createdBy String
+  user      User     @relation(fields: [createdBy], references: [id])
+  
+  payments Payment[]
+  createdAt DateTime @default(now())
+}
+
+model Payment {
+  id        String   @id @default(uuid())
+  amount    Float
+  status    String   @default("completed") // optional but ok
+  createdAt DateTime @default(now())
+
+  projectId String
+  project   Project  @relation(fields: [projectId], references: [id])
+}
