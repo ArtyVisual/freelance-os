@@ -158,6 +158,10 @@ button {
   padding-left: 0;
 }
 
+.table-card .grid div:last-child {
+  border-right: none;
+}
+
 .card.center-card {
   align-items: center !important;
 }
@@ -482,9 +486,22 @@ input[type="number"] {
   bottom: 10px;
 }
 
+@media only screen and (max-width:768px) {
+
+  .table-card .grid div {
+    padding: 10px;
+    border-right: none;
+  }
+
+  .table-card .grid div:first-child {
+    padding-left: 10px;
+  }
+
+}
+
 @media only screen and (max-width:565px) {
 
-  .landing-nav{
+  .landing-nav {
     padding: 20px;
   }
 

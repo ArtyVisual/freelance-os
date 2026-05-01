@@ -199,7 +199,7 @@ export default function ClientsPage() {
         <div className="grid grid-cols-1 gap-4">
           {clients.map((client: any) => (
             <div key={client.id} className="card table-card">
-              <div className="grid grid-cols-4 items-center">
+              <div className="grid grid-cols-2 md:grid-cols-4 items-center">
                 <div>
                   <p className="text-xs text-gray-400">Name</p>
                   <h2 className="mb-0 text-md text-white">{client?.name}</h2>
@@ -213,7 +213,7 @@ export default function ClientsPage() {
                   <p className="text-md text-white">{client.company}</p>
                 </div>
 
-                <div className="flex gap-2 justify-end">
+                <div className="flex gap-2 md:justify-end">
                   <button
                     className="icon-btn"
                     onClick={() => handleResetPassword(client)}
