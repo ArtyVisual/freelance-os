@@ -163,7 +163,7 @@ export default function ProjectsPage() {
             {isLoading ? (
                 <Loader />
             ) : projects.length > 0 ? (
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {projects.map((p: any) => {
 
                         const progress = p.budget ? (p.paid / p.budget) * 100 : 0;

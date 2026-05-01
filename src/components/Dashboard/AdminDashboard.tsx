@@ -39,8 +39,8 @@ export default function DashboardPage() {
   return (
     <div>
 
-      {/* 🔥 STATS */}
-      <div className="grid grid-cols-4 gap-6">
+      {/* STATS */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <div className="card center-card ">
           <p className="text-gray-400 text-sm">Total Revenue</p>
@@ -73,7 +73,7 @@ export default function DashboardPage() {
       </div>
 
       {/*cHARTS */}
-      <div className="grid grid-cols-2 gap-6 mt-6">
+      <div className="grid  lg:grid-cols-2 gap-6 mt-6">
 
         {/* LINE CHART */}
         <div className="card project-card">
@@ -117,18 +117,22 @@ export default function DashboardPage() {
 
       </div>
 
-      <div className="card project-card mt-6">
-        <p className="text-gray-400 mb-3">Insights</p>
+      <div className="ai-border-card mt-6">
+        <div className="ai-border-inner">
 
-        {insights?.length ? (
-          insights.map((i: string, idx: number) => (
-            <p key={idx} className="text-sm mb-2">
-              {i}
-            </p>
-          ))
-        ) : (
-          <p className="text-sm text-gray-500">No insights</p>
-        )}
+          <p className="text-gray-400 mb-3">Insights</p>
+
+          {insights?.length ? (
+            insights.map((i: string, idx: number) => (
+              <p key={idx} className="text-sm mb-2">
+                {i}
+              </p>
+            ))
+          ) : (
+            <p className="text-sm text-gray-500">No insights</p>
+          )}
+
+        </div>
       </div>
 
     </div>

@@ -24,7 +24,7 @@ export default function ClientsPage() {
   const [company, setCompany] = useState("");
 
   if ((session?.user as any)?.role === "client") {
-    redirect("/dashboard"); // 🔥 block access
+    redirect("/dashboard"); //block access
   }
 
   // FETCH CLIENTS
@@ -93,7 +93,7 @@ export default function ClientsPage() {
 
     setShowModal(false);
 
-    // 🔥 ONLY show for new client (not edit)
+    // ONLY show for new client (not edit)
     if (!editClient && data?.tempPassword) {
       Swal.fire({
         title: "Client Created",
