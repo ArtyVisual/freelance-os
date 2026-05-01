@@ -18,8 +18,7 @@ export default function Sidebar() {
 
   if (status === "loading") return null;
 
-  const role = session?.user?.role;
-  console.log(role, session)
+  const role = (session?.user as any)?.role;
 
   const filteredLinks = links.filter(link =>
     link.roles.includes(role)

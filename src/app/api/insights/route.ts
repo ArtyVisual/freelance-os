@@ -31,7 +31,7 @@ export async function GET() {
       // overdue
       if (p.deadline && new Date(p.deadline) < today && p.paid < (p.budget || 0)) {
         insights.push(
-          `⚠ ${p.title} is overdue and ₹${p.budget - p.paid} is still pending. Consider following up immediately.`
+          `⚠ ${p.title} is overdue and ₹${(p.budget || 0) - p.paid} is still pending. Consider following up immediately.`
         );
       }
 

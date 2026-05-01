@@ -23,7 +23,7 @@ export default function ClientsPage() {
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
 
-  if (session?.user?.role === "client") {
+  if ((session?.user as any)?.role === "client") {
     redirect("/dashboard"); // 🔥 block access
   }
 
@@ -164,7 +164,11 @@ export default function ClientsPage() {
     }
   };
 
-  const handleResetPassword = async (client) => {
+  type ClientType = {
+  userId: string;
+};
+
+  const handleResetPassword = async (client: ClientType) => {
     const res = await fetch("/api/clients", {
       method: "PATCH",
       body: JSON.stringify({ userId: client.userId }),

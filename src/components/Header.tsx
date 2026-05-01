@@ -23,7 +23,7 @@ export default function Header({ user }: HeaderProps) {
       <div className="flex items-center gap-3">
         <div  className="text-left text-sm">
             <p>{user || "User"}</p>
-            <p className="capitalize">{session?.user?.role}</p>
+            <p className="capitalize">{(session?.user as any)?.role}</p>
         </div>
         <button
           onClick={() => signOut()}

@@ -108,7 +108,7 @@ export default function PaymentsPage() {
             {/* HEADER */}
             <div className="flex justify-between mb-6">
                 <h2 className="text-2xl font-bold">Payments</h2>
-                {session?.user?.role !== "client" && (
+                {(session?.user as any)?.role !== "client" && (
                     <button className="btn icon-add" onClick={openAddModal}>
                         <FiPlus />
                     </button>
@@ -136,7 +136,7 @@ export default function PaymentsPage() {
                                     <p className="text-xs text-gray-400 mt-1">Pay Date</p>
                                     <p className="text-md text-white">{moment(p.createdAt).format("DD MMM, YY")}</p>
                                 </div>
-                                {session?.user?.role !== "client" && (
+                                {(session?.user as any)?.role !== "client" && (
                                     <div className="flex gap-2 justify-end">
                                         <button
                                             className="icon-btn icon-edit"

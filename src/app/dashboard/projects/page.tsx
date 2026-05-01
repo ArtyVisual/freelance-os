@@ -152,7 +152,7 @@ export default function ProjectsPage() {
             {/* HEADER */}
             <div className="flex justify-between mb-6">
                 <h2 className="text-2xl font-bold">Projects</h2>
-                {session?.user?.role !== "client" && (
+                {(session?.user as any)?.role !== "client" && (
                     <button className="btn icon-add" onClick={openAddModal}>
                         <FiPlus />
                     </button>
@@ -190,7 +190,7 @@ export default function ProjectsPage() {
                                             <h2 className="text-lg font-semibold text-white">{p.title}</h2>
                                         </div>
 
-                                        {session?.user?.role !== "client" && (
+                                        {(session?.user as any)?.role !== "client" && (
                                             <div className="flex gap-2">
                                                 <button
                                                     className="icon-btn icon-edit"
