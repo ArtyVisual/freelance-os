@@ -15,18 +15,18 @@ export default function ClientDashboard() {
   if (isLoading) return <Loader/>;
 
   return (
-    <div className="space-y-6">
+    <div className="client-dash space-y-6">
 
       {/* STATS */}
-      <div className="grid grid-cols-2 gap-6">
-        <div className="card">
+      <div className="grid sm:grid-cols-2 gap-6">
+        <div className="card center-card">
           <p className="text-gray-400 text-sm">Total Paid</p>
           <h2 className="text-xl font-semibold text-green-400">
             ₹ {data.totalPaid}
           </h2>
         </div>
 
-        <div className="card">
+        <div className="card center-card">
           <p className="text-gray-400 text-sm">Remaining</p>
           <h2 className="text-xl font-semibold text-yellow-400">
             ₹ {data.totalRemaining}
@@ -38,9 +38,9 @@ export default function ClientDashboard() {
       <div>
         <h3 className="mb-3 font-semibold">My Projects</h3>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-4">
           {data.projects.map((p: any) => (
-            <div key={p.id} className="card">
+            <div key={p.id} className="card center-card">
               <h4 className="font-semibold">{p.title}</h4>
 
               <p className="text-sm text-gray-400">
@@ -63,9 +63,9 @@ export default function ClientDashboard() {
       <div>
         <h3 className="mb-3 font-semibold">Recent Payments</h3>
 
-        <div className="card table-card">
+        <div className="card project-card p-0">
           {data.recentPayments.map((p: any) => (
-            <div key={p.id} className="flex justify-between text-sm w-full">
+            <div key={p.id} className="flex justify-between text-sm w-full border-b-gray-800 border-b-2 py-2">
               <span>{p.project.title}</span>
               <span className="text-green-400">₹ {p.amount}</span>
             </div>

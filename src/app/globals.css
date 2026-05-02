@@ -194,6 +194,10 @@ button {
   }
 }
 
+.client-dash .card.project-card{
+  padding: 0 16px;
+}
+
 .no-records {
   border: 3px solid var(--sidebar-color);
   padding: 10px;

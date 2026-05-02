@@ -15,17 +15,17 @@ export default function Header({ user }: HeaderProps) {
     <div className="flex items-center justify-between px-3 lg:px-6 py-3 border-b border-gray-800 bg-gray-900">
 
       <div>
-        <h1 className="pl-12 lg:pl-0 pt-1 text-lg font-semibold text-blue-300 m-0 hidden sm:block">
+        <h1 className="pl-12 lg:pl-0 pt-1 text-lg font-semibold text-blue-300 m-0 hidden md:block">
           AI-Powered Freelance Revenue & Risk Management System
         </h1>
-        <h1 className="pl-14 pt-1 text-md font-semibold text-blue-300 m-0 sm:hidden">
-          AI-Powered Freelance
+        <h1 className="pl-14 pt-1 text-md font-semibold text-blue-300 m-0 md:hidden">
+          AI-Powered Freelance System
         </h1>
       </div>
 
       <div className="flex items-center gap-3">
-        <div  className="text-end text-sm">
-            <p>{user || "User"}</p>
+        <div  className="text-end">
+            <p className="text-xs lg:text-sm">{user || "User"}</p>
             <p className="capitalize text-xs"><i>{(session?.user as any)?.role}</i></p>
         </div>
         <button
