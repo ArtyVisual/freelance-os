@@ -28,7 +28,7 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-950 text-white px-4">
-      <div className="w-full max-w-md mb-6 p-5 rounded-xl bg-gray-900 border border-blue-800 text-center">
+      {/* <div className="w-full max-w-md mb-6 p-5 rounded-xl bg-gray-900 border border-blue-800 text-center">
 
         <p className="text-sm text-blue-400 mb-2">
           Demo Access for House of EdTech
@@ -61,11 +61,11 @@ export default function LoginPage() {
           Explore Instantly
         </button>
 
-      </div>
+      </div> */}
       <div className="w-full max-w-md p-8 rounded-2xl bg-gray-900 shadow-lg border border-gray-800">
 
         <h2 className="text-2xl font-semibold mb-2 text-center">
-          Welcome, House of EdTech
+          Welcome!
         </h2>
 
         <p className="text-xs text-gray-400 text-center mb-6">

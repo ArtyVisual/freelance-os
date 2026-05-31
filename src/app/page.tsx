@@ -39,13 +39,9 @@ export default function Home() {
           all in one powerful dashboard.
         </motion.p>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => router.push("/login")}
-        >
+        <button onClick={() => router.push("/login")}>
           Get Started
-        </motion.button>
+        </button>
       </div>
 
       {/* FEATURES */}
