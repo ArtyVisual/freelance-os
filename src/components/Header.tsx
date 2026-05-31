@@ -30,7 +30,7 @@ export default function Header({ user }: HeaderProps) {
         </div>
         <button
           onClick={() => signOut()}
-          className="px-2 md:px-4 py-2 text-xs md:text-xl bg-red-600 rounded-lg hover:bg-red-700"
+          className="px-2 md:px-4 py-2 text-xs md:text-sm bg-red-600 rounded-lg hover:bg-red-700"
         >
           Logout
         </button>
