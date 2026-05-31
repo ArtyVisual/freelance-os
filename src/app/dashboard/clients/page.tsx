@@ -202,15 +202,15 @@ export default function ClientsPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 items-center">
                 <div>
                   <p className="text-xs text-gray-400">Name</p>
-                  <h2 className="mb-0 text-md text-white">{client?.name}</h2>
+                  <h2 className="mb-0 text-md text-white truncate-text">{client?.name}</h2>
                 </div>
                 <div>
                   <p className="text-xs text-gray-400">Email</p>
-                  <p className="text-md text-white">{client.email}</p>
+                  <p className="text-md text-white truncate-text">{client.email}</p>
                 </div>
                 <div>
                   <p className="text-xs text-gray-400">Company</p>
-                  <p className="text-md text-white">{client.company}</p>
+                  <p className="text-md text-white truncate-text">{client.company}</p>
                 </div>
 
                 <div className="flex gap-2 md:justify-end">

@@ -17,7 +17,7 @@ export default async function DashboardLayout({
       <div className="flex flex-col flex-1">
         <Header user={session?.user?.name} />
 
-        <main className="p-6 overflow-y-auto">
+        <main className="p-3 pt-4 md:p-6 overflow-y-auto">
           {children}
         </main>
       </div>

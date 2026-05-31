@@ -31,7 +31,7 @@ export default function Sidebar() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="lg:hidden fixed top-4 left-4 z-50 bg-gray-900 p-2 rounded-md border border-gray-700"
+        className="lg:hidden fixed top-3 left-2 md:left-4 z-50 bg-gray-900 p-2 rounded-md border border-gray-700"
       >
         <FiMenu size={20} />
       </button>
