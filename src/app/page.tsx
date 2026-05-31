@@ -38,10 +38,7 @@ export default function Home() {
           Manage clients, track payments, and detect financial risks —
           all in one powerful dashboard.
         </motion.p>
-
-        <button onClick={() => router.push("/login")}>
-          Get Started
-        </button>
+        
       </div>
 
       {/* FEATURES */}
